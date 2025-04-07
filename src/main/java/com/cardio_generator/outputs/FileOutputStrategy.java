@@ -6,6 +6,12 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
 import java.util.concurrent.ConcurrentHashMap;
+
+/**
+ * class implements {@link OutputStrategy} and outputs the patient data to text files
+ * with each label type getting its own file
+ */
+
 //name didn't match file name,f needs to be uppercase, class names: UpperCamelCase
 public class FileOutputStrategy implements OutputStrategy {
     //B needs to be small, lowerCamelCase
@@ -15,8 +21,7 @@ public class FileOutputStrategy implements OutputStrategy {
 
     //constructor name didn't match, f needs to be uppercase, added method-level Javadoc
     /**
-     * Creates a FileOutputStrategy with the specified base directory.
-     *
+     * creates a FileOutputStrategy with the specified base directory
      * @param baseDirectory the directory where output files will be created
      */
     public FileOutputStrategy(String baseDirectory) {
@@ -24,6 +29,14 @@ public class FileOutputStrategy implements OutputStrategy {
         this.baseDirectory = baseDirectory;
     }
 
+    /**
+    * method that outputs the patient's data to a file based on the label
+     * with each label getting its own file
+     * @param patientId initializes which patient is considered
+     * @param timestamp when the data was recorded
+     * @param label what type of data
+     * @param data the actual data
+     */
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
         try {
