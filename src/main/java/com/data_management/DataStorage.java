@@ -6,20 +6,20 @@ import java.util.List;
 import java.util.Map;
 import com.alerts.AlertGenerator;
 
-/**
+/*/**
  * Manages storage and retrieval of patient data within a healthcare monitoring
  * system.
  * This class serves as a repository for all patient records, organized by
  * patient IDs.
  */
-public class DataStorage {
-    private Map<Integer, Patient> patientMap; // Stores patient objects indexed by their unique patient ID.
+  public class DataStorage {
+   // private Map<Integer, Patient> patientMap; // Stores patient objects indexed by their unique patient ID.
 
-    /**
+   /* /**
      * Constructs a new instance of DataStorage, initializing the underlying storage
      * structure.
      */
-    public DataStorage() {
+    /*public DataStorage() {
         this.patientMap = new HashMap<>();
     }
 
@@ -36,7 +36,7 @@ public class DataStorage {
      * @param timestamp        the time at which the measurement was taken, in
      *                         milliseconds since the Unix epoch
      */
-    public void addPatientData(int patientId, double measurementValue, String recordType, long timestamp) {
+   /* public void addPatientData(int patientId, double measurementValue, String recordType, long timestamp) {
         Patient patient = patientMap.get(patientId);
         if (patient == null) {
             patient = new Patient(patientId);
@@ -58,7 +58,7 @@ public class DataStorage {
      * @return a list of PatientRecord objects that fall within the specified time
      *         range
      */
-    public List<PatientRecord> getRecords(int patientId, long startTime, long endTime) {
+   /* public List<PatientRecord> getRecords(int patientId, long startTime, long endTime) {
         Patient patient = patientMap.get(patientId);
         if (patient != null) {
             return patient.getRecords(startTime, endTime);
@@ -71,7 +71,7 @@ public class DataStorage {
      *
      * @return a list of all patients
      */
-    public List<Patient> getAllPatients() {
+   /* public List<Patient> getAllPatients() {
         return new ArrayList<>(patientMap.values());
     }
 
@@ -82,7 +82,7 @@ public class DataStorage {
      * 
      * @param args command line arguments
      */
-    public static void main(String[] args) {
+  /*  public static void main(String[] args) {
         // DataReader is not defined in this scope, should be initialized appropriately.
         // DataReader reader = new SomeDataReaderImplementation("path/to/data");
         DataStorage storage = new DataStorage();
@@ -103,9 +103,9 @@ public class DataStorage {
         // Initialize the AlertGenerator with the storage
         AlertGenerator alertGenerator = new AlertGenerator(storage);
 
-        // Evaluate all patients' data to check for conditions that may trigger alerts
+       /* // Evaluate all patients' data to check for conditions that may trigger alerts
         for (Patient patient : storage.getAllPatients()) {
             alertGenerator.evaluateData(patient);
         }
-    }
+    }*/
 }
