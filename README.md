@@ -64,8 +64,19 @@ java -jar target/cardio_generator-1.0-SNAPSHOT.jar --patient-count 100 --output 
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## UML Models
 
+In `uml_models/` findest du alle UML-Diagramme und die Begleit-Dokumentation:
 
+- **Data Access Layer**  
+  DataSourceAdapter, DataListener, DataParser, DataRecord und DataStorage  
+- **Data Storage System**  
+  Speicherung, Retrieval, Alerting, Authorisierung  
+- **Alerting Module**  
+  Alert, AlertRule, AlertGenerator, AlertManager, StaffMember
+
+Schau dir die PDFs im Ordner an:  
+[uml_models](./uml_models/)
 
 
 ## Project Members
