@@ -66,16 +66,16 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 
 ## UML Models
 
-In `uml_models/` findest du alle UML-Diagramme und die Begleit-Dokumentation:
+All UML diagrams and accompanying documentation are in the `uml_models/` folder:
 
 - **Data Access Layer**  
-  DataSourceAdapter, DataListener, DataParser, DataRecord und DataStorage  
+  DataSourceAdapter, DataListener, DataParser, DataRecord, and DataStorage  
 - **Data Storage System**  
-  Speicherung, Retrieval, Alerting, Authorisierung  
+  Storage, retrieval, alerting, and authorization  
 - **Alerting Module**  
-  Alert, AlertRule, AlertGenerator, AlertManager, StaffMember
+  Alert, AlertRule, AlertGenerator, AlertManager, and StaffMember  
 
-Schau dir die PDFs im Ordner an:  
+Browse the PDFs in the folder:  
 [uml_models](./uml_models/)
 
 
