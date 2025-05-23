@@ -2,6 +2,7 @@ package com.data_management;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Represents a patient and manages their medical records.
@@ -51,7 +52,17 @@ public class Patient {
      * @return a list of PatientRecord objects that fall within the specified time
      *         range
      */
-    //public List<PatientRecord> getRecords(long startTime, long endTime) {
+    public List<PatientRecord> getRecords(long startTime, long endTime) {
         // TODO Implement and test this method
-    //}
-}
+        // Implement and test this method
+        return patientRecords.stream()
+                .filter(record -> record.getTimestamp() >= startTime && record.getTimestamp() <= endTime)
+                .collect(Collectors.toList());
+    }
+
+    // You might want a getter for patientId if not already present
+    public int getPatientId() {
+        return patientId;
+    }
+    }
+
