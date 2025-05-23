@@ -15,12 +15,12 @@ import com.alerts.AlertGenerator;
  */
   public class DataStorage {
     private Map<Integer, Patient> patientMap; // Stores patient objects indexed by their unique patient ID.
-
+    private static DataStorage instance; //for singleton
     /**
      * Constructs a new instance of DataStorage, initializing the underlying storage
      * structure.
      */
-    public DataStorage() {
+    private DataStorage() {
         this.patientMap = new HashMap<>();
     }
 
@@ -76,6 +76,12 @@ import com.alerts.AlertGenerator;
         return new ArrayList<>(patientMap.values());
     }
 
+    public static DataStorage getInstance() {
+        if (instance== null){
+            instance = new DataStorage();
+        }
+        return instance;
+    }
     /**
      * The main method for the DataStorage class.
      * Initializes the system, reads data into storage, and continuously monitors
