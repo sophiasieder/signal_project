@@ -10,7 +10,7 @@ import java.util.stream.Collectors;
      * Handles ECG data alerts:
      * - Abnormal peaks based on sliding window average
      */
-    public class ECGAlertStrategy implements AlertStrategy {
+   public class ECGAlertStrategy implements AlertStrategy {
 
         private static final int SLIDING_WINDOW_SIZE = 10;
         private static final double ABNORMAL_PEAK_MULTIPLIER = 2.5; // Peak must be 2.5x the average

@@ -10,5 +10,5 @@ public interface DataReader {
      */
     void readData(DataStorage dataStorage) throws IOException;
 
-
+    void onMessage(String message);
 }

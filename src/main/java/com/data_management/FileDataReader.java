@@ -15,6 +15,9 @@ import java.util.stream.Stream;
         }
 
         @Override
+        public void onMessage(String message) {}
+
+        @Override
         public void readData(DataStorage dataStorage) throws IOException {
             try (DirectoryStream<Path> files = Files.newDirectoryStream(directory, "*.csv")) {
                 for (Path file : files) {
@@ -37,5 +40,7 @@ import java.util.stream.Stream;
                     }
                 }
             }
+
+
         }
     }

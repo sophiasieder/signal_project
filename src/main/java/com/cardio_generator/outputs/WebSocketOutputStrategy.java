@@ -17,10 +17,17 @@ public class WebSocketOutputStrategy implements OutputStrategy {
 
     @Override
     public void output(int patientId, long timestamp, String label, String data) {
-        String message = String.format("%d,%d,%s,%s", patientId, timestamp, label, data);
-        // Broadcast the message to all connected clients
+        String messageJson = String.format(
+                "{\"patientId\":%d,\"timestamp\":%d,\"label\":\"%s\",\"data\":\"%s\"}",
+                patientId, timestamp, label, data
+        );
         for (WebSocket conn : server.getConnections()) {
-            conn.send(message);
+            try {
+                conn.send(messageJson);
+            } catch (Exception e) {
+                System.err.println("failed to send message to client: " + e.getMessage());
+                e.printStackTrace();
+            }
         }
     }
 

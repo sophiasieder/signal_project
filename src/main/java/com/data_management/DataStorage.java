@@ -20,7 +20,7 @@ import com.alerts.AlertGenerator;
      * Constructs a new instance of DataStorage, initializing the underlying storage
      * structure.
      */
-    private DataStorage() {
+    public DataStorage() {
         this.patientMap = new HashMap<>();
     }
 

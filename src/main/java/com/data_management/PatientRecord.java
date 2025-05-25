@@ -33,7 +33,6 @@ public class PatientRecord {
 
     /**
      * Returns the patient ID associated with this record.
-     * 
      * @return the patient ID
      */
     public int getPatientId() {
@@ -42,7 +41,6 @@ public class PatientRecord {
 
     /**
      * Returns the measurement value of this record.
-     * 
      * @return the measurement value
      */
     public double getMeasurementValue() {
@@ -51,7 +49,6 @@ public class PatientRecord {
 
     /**
      * Returns the timestamp when this record was taken.
-     * 
      * @return the timestamp in milliseconds since epoch
      */
     public long getTimestamp() {
@@ -65,5 +62,9 @@ public class PatientRecord {
      */
     public String getRecordType() {
         return recordType;
+    }
+
+    public String getRecordData() {
+        return "hello";
     }
 }

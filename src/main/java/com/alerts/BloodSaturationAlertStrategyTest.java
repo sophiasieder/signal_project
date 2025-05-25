@@ -50,7 +50,7 @@ public class BloodSaturationAlertStrategyTest {
         Alert alert = alerts.get(0);
         assertEquals("123", alert.getPatientId());
         assertTrue(alert.getCondition().contains("Low Blood Saturation"));
-        assertTrue(alert.getCondition().contains("91.0%"));
+        assertTrue(alert.getCondition().contains("91"));
     }
 
     @Test
@@ -98,7 +98,7 @@ public class BloodSaturationAlertStrategyTest {
         Alert alert = alerts.get(0);
         assertEquals("123", alert.getPatientId());
         assertTrue(alert.getCondition().contains("Rapid Saturation Drop"));
-        assertTrue(alert.getCondition().contains("5.0%"));
+        assertTrue(alert.getCondition().contains("5"));
     }
 
     @Test

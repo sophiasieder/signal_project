@@ -66,8 +66,9 @@ public class AlertGenerator {
      * under which an alert will be triggered.
      *
      * @param patient the patient data to evaluate for alert conditions
+     * @return
      */
-    public void evaluateData(Patient patient) {
+    public List<Alert> evaluateData(Patient patient) {
         try {
             // Get recent patient records (last 24 hours for comprehensive analysis)
             long currentTime = System.currentTimeMillis();
@@ -77,7 +78,7 @@ public class AlertGenerator {
             List<PatientRecord> recentRecords = dataStorage.getRecords(patient.getPatientId(), startTime, currentTime);
 
             if (recentRecords.isEmpty()) {
-                return; // No data to evaluate
+                return null;
             }
 
             // Apply each alert strategy
@@ -98,6 +99,7 @@ public class AlertGenerator {
             System.err.println("Error evaluating data for patient " + patient.getPatientId() + ": " + e.getMessage());
             e.printStackTrace();
         }
+        return null;
     }
 
     /**
